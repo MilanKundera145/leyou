@@ -17,3 +17,13 @@ eureka:
   instance:
     lease-renewal-interval-in-seconds: 5 # 5秒钟发送一次心跳
     lease-expiration-duration-in-seconds: 10 # 10秒不发送就过期
+
+#mybatis plus 设置
+mybatis-plus:
+  type-aliases-package: com.leyou.item.pojo
+  mapper-locations: com/leyou/item/mapper/*.xml
+  configuration:
+    jdbc-type-for-null: null
+  global-config:
+    # 关闭 mybatis-plus的 banner
+    banner: false
