@@ -3,7 +3,7 @@
 <mapper namespace="com.leyou.item.mapper.BrandMapper">
 
     <select id="queryBrandsByPage" resultType="com.leyou.item.pojo.Brand">
-        select * from tb_brand where `name` like concat('%',#{key},'%')  GROUP BY ${sortBy} DESC
+        select * from tb_brand where `name` like concat('%',#{key},'%')
     </select>
 
 </mapper>

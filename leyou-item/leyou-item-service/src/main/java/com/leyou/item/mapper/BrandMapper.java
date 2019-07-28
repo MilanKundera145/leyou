@@ -11,9 +11,8 @@ public interface BrandMapper extends BaseMapper<Brand> {
     /**
      * 分页查询
      * @param key
-     * @param sortBy
      * @param page
      * @return
      */
-    IPage<Brand> queryBrandsByPage(Page<Brand> page, @Param("key") String key, @Param("sortBy") String sortBy);
+    IPage<Brand> queryBrandsByPage(Page<Brand> page, @Param("key") String key);
 }

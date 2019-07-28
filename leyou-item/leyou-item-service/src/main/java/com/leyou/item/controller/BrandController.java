@@ -25,10 +25,9 @@ public class BrandController {
     public ResponseEntity<PageResult<Brand>> queryBrandsByPage(
             @RequestParam(value = "key", required = false)String key,
             @RequestParam(value = "pageNo", defaultValue = "1")Long pageNo,
-            @RequestParam(value = "size", defaultValue = "5")Long size,
-            @RequestParam(value = "sortBy", required = false)String sortBy
+            @RequestParam(value = "size", defaultValue = "5")Long size
     ){
-        IPage<Brand> iPage = this.brandService.queryBrandsByPage(key, pageNo, size, sortBy);
+        IPage<Brand> iPage = this.brandService.queryBrandsByPage(key, pageNo, size);
 
         PageResult<Brand> result = new PageResult<>();
         result.setItems(iPage.getRecords());

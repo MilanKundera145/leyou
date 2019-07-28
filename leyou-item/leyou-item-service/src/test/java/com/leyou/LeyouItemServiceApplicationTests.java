@@ -27,7 +27,7 @@ public class LeyouItemServiceApplicationTests {
 
     @Test
     public void test2(){
-        IPage<Brand> iPage = this.brandService.queryBrandsByPage("L", 1L, 10L, "letter");
+        IPage<Brand> iPage = this.brandService.queryBrandsByPage("L", 1L, 10L);
         System.out.println(iPage.getRecords());
     }
 

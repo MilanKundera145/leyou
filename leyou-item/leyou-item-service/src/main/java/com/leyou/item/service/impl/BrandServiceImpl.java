@@ -18,10 +18,10 @@ import org.springframework.transaction.annotation.Transactional;
 public class BrandServiceImpl extends ServiceImpl<BrandMapper, Brand> implements BrandService {
 
     @Override
-    public IPage<Brand> queryBrandsByPage(String key, Long pageNo, Long size, String sortBy) {
+    public IPage<Brand> queryBrandsByPage(String key, Long pageNo, Long size) {
 
         Page<Brand> page = new Page<>(pageNo,size);
-        IPage<Brand> iPage = this.baseMapper.queryBrandsByPage(page,key,sortBy);
+        IPage<Brand> iPage = this.baseMapper.queryBrandsByPage(page,key);
         return iPage;
     }
 }

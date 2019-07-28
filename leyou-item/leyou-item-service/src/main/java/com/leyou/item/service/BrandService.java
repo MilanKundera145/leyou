@@ -11,8 +11,7 @@ public interface BrandService extends IService<Brand> {
      * @param key
      * @param pageNo
      * @param size
-     * @param sortBy
      * @return
      */
-    IPage<Brand> queryBrandsByPage(String key, Long pageNo, Long size, String sortBy);
+    IPage<Brand> queryBrandsByPage(String key, Long pageNo, Long size);
 }
