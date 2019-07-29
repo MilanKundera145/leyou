@@ -4,6 +4,8 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.leyou.item.pojo.Brand;
 
+import java.util.List;
+
 public interface BrandService extends IService<Brand> {
 
     /**
@@ -14,4 +16,11 @@ public interface BrandService extends IService<Brand> {
      * @return
      */
     IPage<Brand> queryBrandsByPage(String key, Long pageNo, Long size);
+
+    /**
+     * 新增品牌
+     * @param brand
+     * @param cids
+     */
+    void saveBrand(Brand brand, List<Long> cids);
 }
