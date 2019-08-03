@@ -4,10 +4,12 @@ import com.leyou.item.pojo.Category;
 import com.leyou.item.service.CategoryService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -42,6 +44,14 @@ public class CategoryController {
         if (CollectionUtils.isEmpty(categories))
             return ResponseEntity.badRequest().build();
 
+        return ResponseEntity.ok(categories);
+    }
+
+    @GetMapping("bid/{bid}")
+    public ResponseEntity<List<Category>> queryByBid(@PathVariable("bid") Long bid){
+        List<Category> categories = this.categoryService.queryByBid(bid);
+        if (categories==null || categories.size()<1)
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         return ResponseEntity.ok(categories);
     }
 

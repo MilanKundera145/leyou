@@ -19,4 +19,11 @@ public interface CategoryService extends IService<Category> {
      * @return
      */
     List<Category> categoryList();
+
+    /**
+     * 通过品牌id查询商品分类
+     * @param bid
+     * @return
+     */
+    List<Category> queryByBid(Long bid);
 }

@@ -28,4 +28,9 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryMapper, Category> i
     public List<Category> categoryList() {
         return this.baseMapper.categoryList();
     }
+
+    @Override
+    public List<Category> queryByBid(Long bid) {
+        return this.baseMapper.queryByBrandId(bid);
+    }
 }
