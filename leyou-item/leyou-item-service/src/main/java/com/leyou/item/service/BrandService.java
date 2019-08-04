@@ -23,4 +23,11 @@ public interface BrandService extends IService<Brand> {
      * @param cids
      */
     void saveBrand(Brand brand, List<Long> cids);
+
+    /**
+     * 品牌集合
+     * @param cid
+     * @return
+     */
+    List<Brand> queryBrandsByCid(Long cid);
 }

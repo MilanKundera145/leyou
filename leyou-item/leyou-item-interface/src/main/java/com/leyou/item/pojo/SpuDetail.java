@@ -8,7 +8,7 @@ import lombok.Data;
 @TableName("tb_spu_detail")
 public class SpuDetail {
 
-    @TableId("spuId")
+    @TableId("spu_id")
     private Long spuId;// 对应的SPU的id
     private String description;// 商品描述
     private String specialSpec;// 商品特殊规格的名称及可选值模板
