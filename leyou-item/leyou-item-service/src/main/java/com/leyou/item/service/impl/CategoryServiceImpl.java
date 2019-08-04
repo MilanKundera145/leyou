@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Slf4j
@@ -32,5 +33,15 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryMapper, Category> i
     @Override
     public List<Category> queryByBid(Long bid) {
         return this.baseMapper.queryByBrandId(bid);
+    }
+
+    @Override
+    public List<String> queryNamesByIds(List<Long> ids) {
+        List<Category> categories = this.baseMapper.selectBatchIds(ids);
+        List<String> names = new ArrayList<>();
+        for (Category category : categories) {
+            names.add(category.getName());
+        }
+        return names;
     }
 }
