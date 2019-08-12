@@ -12,5 +12,8 @@ import java.util.List;
 public interface BrandApi {
 
     @GetMapping("cid/{cid}")
-    ResponseEntity<List<Brand>> queryBrandsByCid(@PathVariable("cid")Long cid);
+    List<Brand> queryBrandsByCid(@PathVariable("cid")Long cid);
+
+    @GetMapping("{id}")
+    Brand queryBrandById(@PathVariable("id") Long id);
 }

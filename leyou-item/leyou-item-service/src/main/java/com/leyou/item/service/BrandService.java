@@ -30,4 +30,11 @@ public interface BrandService extends IService<Brand> {
      * @return
      */
     List<Brand> queryBrandsByCid(Long cid);
+
+    /**
+     * 查询品牌
+     * @param id
+     * @return
+     */
+    Brand queryBrandById(Long id);
 }

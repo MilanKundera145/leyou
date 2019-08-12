@@ -16,15 +16,15 @@ import java.util.List;
 public interface GoodsApi {
 
     @GetMapping("spu/page")
-    ResponseEntity<PageResult<SpuBo>> querySpuBoByPage(
+    PageResult<SpuBo> querySpuBoByPage(
             @RequestParam(value = "key", required = false)String key,
             @RequestParam(value = "saleable", required = false)Boolean saleable,
             @RequestParam(value = "page", defaultValue = "1")Integer page,
             @RequestParam(value = "rows", defaultValue = "5")Integer rows);
 
     @GetMapping("spu/detail/{spuId}")
-    ResponseEntity<SpuDetail> querySpuDetailBySpuId(@PathVariable("spuId")Long spuId);
+    SpuDetail querySpuDetailBySpuId(@PathVariable("spuId")Long spuId);
 
     @GetMapping("sku/list")
-    ResponseEntity<List<Sku>> querySkusBySpuId(@RequestParam("id")Long spuId);
+    List<Sku> querySkusBySpuId(@RequestParam("id")Long spuId);
 }
